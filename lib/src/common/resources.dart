@@ -682,8 +682,10 @@ class AssociationsessionsResource extends Resource {
    * [productCode] - Products to associate with the user.
    *   Allowed values:
    *     AFC - AdSense For Content
+   *     AFG - AdSense For Games
    *     AFMC - AdSense For Mobile Content
    *     AFS - AdSense For Search
+   *     AFV - AdSense For Video
    *
    * [websiteUrl] - The URL of the user's hosted website.
    *
@@ -701,8 +703,8 @@ class AssociationsessionsResource extends Resource {
 
     var paramErrors = new List();
     if (productCode == null) paramErrors.add("productCode is required");
-    if (productCode != null && !["AFC", "AFMC", "AFS"].contains(productCode)) {
-      paramErrors.add("Allowed values for productCode: AFC, AFMC, AFS");
+    if (productCode != null && !["AFC", "AFG", "AFMC", "AFS", "AFV"].contains(productCode)) {
+      paramErrors.add("Allowed values for productCode: AFC, AFG, AFMC, AFS, AFV");
     }
     if (productCode != null) queryParams["productCode"] = productCode;
     if (userLocale != null) queryParams["userLocale"] = userLocale;

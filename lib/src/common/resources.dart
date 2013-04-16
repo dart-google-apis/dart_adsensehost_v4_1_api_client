@@ -22,13 +22,13 @@ class AccountsResource extends Resource {
    *
    * [optParams] - Additional query parameters
    */
-  Future<Account> get(String accountId, {Map optParams}) {
-    var completer = new Completer();
+  async.Future<Account> get(core.String accountId, {core.Map optParams}) {
+    var completer = new async.Completer();
     var url = "accounts/{accountId}";
-    var urlParams = new Map();
-    var queryParams = new Map();
+    var urlParams = new core.Map();
+    var queryParams = new core.Map();
 
-    var paramErrors = new List();
+    var paramErrors = new core.List();
     if (accountId == null) paramErrors.add("accountId is required");
     if (accountId != null) urlParams["accountId"] = accountId;
     if (optParams != null) {
@@ -59,13 +59,13 @@ class AccountsResource extends Resource {
    *
    * [optParams] - Additional query parameters
    */
-  Future<Accounts> list(String filterAdClientId, {Map optParams}) {
-    var completer = new Completer();
+  async.Future<Accounts> list(core.String filterAdClientId, {core.Map optParams}) {
+    var completer = new async.Completer();
     var url = "accounts";
-    var urlParams = new Map();
-    var queryParams = new Map();
+    var urlParams = new core.Map();
+    var queryParams = new core.Map();
 
-    var paramErrors = new List();
+    var paramErrors = new core.List();
     if (filterAdClientId == null) paramErrors.add("filterAdClientId is required");
     if (filterAdClientId != null) queryParams["filterAdClientId"] = filterAdClientId;
     if (optParams != null) {
@@ -104,13 +104,13 @@ class AccountsAdclientsResource extends Resource {
    *
    * [optParams] - Additional query parameters
    */
-  Future<AdClient> get(String accountId, String adClientId, {Map optParams}) {
-    var completer = new Completer();
+  async.Future<AdClient> get(core.String accountId, core.String adClientId, {core.Map optParams}) {
+    var completer = new async.Completer();
     var url = "accounts/{accountId}/adclients/{adClientId}";
-    var urlParams = new Map();
-    var queryParams = new Map();
+    var urlParams = new core.Map();
+    var queryParams = new core.Map();
 
-    var paramErrors = new List();
+    var paramErrors = new core.List();
     if (accountId == null) paramErrors.add("accountId is required");
     if (accountId != null) urlParams["accountId"] = accountId;
     if (adClientId == null) paramErrors.add("adClientId is required");
@@ -149,13 +149,13 @@ class AccountsAdclientsResource extends Resource {
    *
    * [optParams] - Additional query parameters
    */
-  Future<AdClients> list(String accountId, {int maxResults, String pageToken, Map optParams}) {
-    var completer = new Completer();
+  async.Future<AdClients> list(core.String accountId, {core.int maxResults, core.String pageToken, core.Map optParams}) {
+    var completer = new async.Completer();
     var url = "accounts/{accountId}/adclients";
-    var urlParams = new Map();
-    var queryParams = new Map();
+    var urlParams = new core.Map();
+    var queryParams = new core.Map();
 
-    var paramErrors = new List();
+    var paramErrors = new core.List();
     if (accountId == null) paramErrors.add("accountId is required");
     if (accountId != null) urlParams["accountId"] = accountId;
     if (maxResults != null) queryParams["maxResults"] = maxResults;
@@ -198,13 +198,13 @@ class AccountsAdunitsResource extends Resource {
    *
    * [optParams] - Additional query parameters
    */
-  Future<AdUnit> delete(String accountId, String adClientId, String adUnitId, {Map optParams}) {
-    var completer = new Completer();
+  async.Future<AdUnit> delete(core.String accountId, core.String adClientId, core.String adUnitId, {core.Map optParams}) {
+    var completer = new async.Completer();
     var url = "accounts/{accountId}/adclients/{adClientId}/adunits/{adUnitId}";
-    var urlParams = new Map();
-    var queryParams = new Map();
+    var urlParams = new core.Map();
+    var queryParams = new core.Map();
 
-    var paramErrors = new List();
+    var paramErrors = new core.List();
     if (accountId == null) paramErrors.add("accountId is required");
     if (accountId != null) urlParams["accountId"] = accountId;
     if (adClientId == null) paramErrors.add("adClientId is required");
@@ -243,13 +243,13 @@ class AccountsAdunitsResource extends Resource {
    *
    * [optParams] - Additional query parameters
    */
-  Future<AdUnit> get(String accountId, String adClientId, String adUnitId, {Map optParams}) {
-    var completer = new Completer();
+  async.Future<AdUnit> get(core.String accountId, core.String adClientId, core.String adUnitId, {core.Map optParams}) {
+    var completer = new async.Completer();
     var url = "accounts/{accountId}/adclients/{adClientId}/adunits/{adUnitId}";
-    var urlParams = new Map();
-    var queryParams = new Map();
+    var urlParams = new core.Map();
+    var queryParams = new core.Map();
 
-    var paramErrors = new List();
+    var paramErrors = new core.List();
     if (accountId == null) paramErrors.add("accountId is required");
     if (accountId != null) urlParams["accountId"] = accountId;
     if (adClientId == null) paramErrors.add("adClientId is required");
@@ -290,13 +290,13 @@ class AccountsAdunitsResource extends Resource {
    *
    * [optParams] - Additional query parameters
    */
-  Future<AdCode> getAdCode(String accountId, String adClientId, String adUnitId, {String hostCustomChannelId, Map optParams}) {
-    var completer = new Completer();
+  async.Future<AdCode> getAdCode(core.String accountId, core.String adClientId, core.String adUnitId, {core.String hostCustomChannelId, core.Map optParams}) {
+    var completer = new async.Completer();
     var url = "accounts/{accountId}/adclients/{adClientId}/adunits/{adUnitId}/adcode";
-    var urlParams = new Map();
-    var queryParams = new Map();
+    var urlParams = new core.Map();
+    var queryParams = new core.Map();
 
-    var paramErrors = new List();
+    var paramErrors = new core.List();
     if (accountId == null) paramErrors.add("accountId is required");
     if (accountId != null) urlParams["accountId"] = accountId;
     if (adClientId == null) paramErrors.add("adClientId is required");
@@ -336,13 +336,13 @@ class AccountsAdunitsResource extends Resource {
    *
    * [optParams] - Additional query parameters
    */
-  Future<AdUnit> insert(AdUnit request, String accountId, String adClientId, {Map optParams}) {
-    var completer = new Completer();
+  async.Future<AdUnit> insert(AdUnit request, core.String accountId, core.String adClientId, {core.Map optParams}) {
+    var completer = new async.Completer();
     var url = "accounts/{accountId}/adclients/{adClientId}/adunits";
-    var urlParams = new Map();
-    var queryParams = new Map();
+    var urlParams = new core.Map();
+    var queryParams = new core.Map();
 
-    var paramErrors = new List();
+    var paramErrors = new core.List();
     if (accountId == null) paramErrors.add("accountId is required");
     if (accountId != null) urlParams["accountId"] = accountId;
     if (adClientId == null) paramErrors.add("adClientId is required");
@@ -385,13 +385,13 @@ class AccountsAdunitsResource extends Resource {
    *
    * [optParams] - Additional query parameters
    */
-  Future<AdUnits> list(String accountId, String adClientId, {bool includeInactive, int maxResults, String pageToken, Map optParams}) {
-    var completer = new Completer();
+  async.Future<AdUnits> list(core.String accountId, core.String adClientId, {core.bool includeInactive, core.int maxResults, core.String pageToken, core.Map optParams}) {
+    var completer = new async.Completer();
     var url = "accounts/{accountId}/adclients/{adClientId}/adunits";
-    var urlParams = new Map();
-    var queryParams = new Map();
+    var urlParams = new core.Map();
+    var queryParams = new core.Map();
 
-    var paramErrors = new List();
+    var paramErrors = new core.List();
     if (accountId == null) paramErrors.add("accountId is required");
     if (accountId != null) urlParams["accountId"] = accountId;
     if (adClientId == null) paramErrors.add("adClientId is required");
@@ -433,13 +433,13 @@ class AccountsAdunitsResource extends Resource {
    *
    * [optParams] - Additional query parameters
    */
-  Future<AdUnit> patch(AdUnit request, String accountId, String adClientId, String adUnitId, {Map optParams}) {
-    var completer = new Completer();
+  async.Future<AdUnit> patch(AdUnit request, core.String accountId, core.String adClientId, core.String adUnitId, {core.Map optParams}) {
+    var completer = new async.Completer();
     var url = "accounts/{accountId}/adclients/{adClientId}/adunits";
-    var urlParams = new Map();
-    var queryParams = new Map();
+    var urlParams = new core.Map();
+    var queryParams = new core.Map();
 
-    var paramErrors = new List();
+    var paramErrors = new core.List();
     if (accountId == null) paramErrors.add("accountId is required");
     if (accountId != null) urlParams["accountId"] = accountId;
     if (adClientId == null) paramErrors.add("adClientId is required");
@@ -478,13 +478,13 @@ class AccountsAdunitsResource extends Resource {
    *
    * [optParams] - Additional query parameters
    */
-  Future<AdUnit> update(AdUnit request, String accountId, String adClientId, {Map optParams}) {
-    var completer = new Completer();
+  async.Future<AdUnit> update(AdUnit request, core.String accountId, core.String adClientId, {core.Map optParams}) {
+    var completer = new async.Completer();
     var url = "accounts/{accountId}/adclients/{adClientId}/adunits";
-    var urlParams = new Map();
-    var queryParams = new Map();
+    var urlParams = new core.Map();
+    var queryParams = new core.Map();
 
-    var paramErrors = new List();
+    var paramErrors = new core.List();
     if (accountId == null) paramErrors.add("accountId is required");
     if (accountId != null) urlParams["accountId"] = accountId;
     if (adClientId == null) paramErrors.add("adClientId is required");
@@ -545,13 +545,13 @@ class AccountsReportsResource extends Resource {
    *
    * [optParams] - Additional query parameters
    */
-  Future<Report> generate(String accountId, String startDate, String endDate, {String dimension, String filter, String locale, int maxResults, String metric, String sort, int startIndex, Map optParams}) {
-    var completer = new Completer();
+  async.Future<Report> generate(core.String accountId, core.String startDate, core.String endDate, {core.String dimension, core.String filter, core.String locale, core.int maxResults, core.String metric, core.String sort, core.int startIndex, core.Map optParams}) {
+    var completer = new async.Completer();
     var url = "accounts/{accountId}/reports";
-    var urlParams = new Map();
-    var queryParams = new Map();
+    var urlParams = new core.Map();
+    var queryParams = new core.Map();
 
-    var paramErrors = new List();
+    var paramErrors = new core.List();
     if (accountId == null) paramErrors.add("accountId is required");
     if (accountId != null) urlParams["accountId"] = accountId;
     if (dimension != null) queryParams["dimension"] = dimension;
@@ -599,13 +599,13 @@ class AdclientsResource extends Resource {
    *
    * [optParams] - Additional query parameters
    */
-  Future<AdClient> get(String adClientId, {Map optParams}) {
-    var completer = new Completer();
+  async.Future<AdClient> get(core.String adClientId, {core.Map optParams}) {
+    var completer = new async.Completer();
     var url = "adclients/{adClientId}";
-    var urlParams = new Map();
-    var queryParams = new Map();
+    var urlParams = new core.Map();
+    var queryParams = new core.Map();
 
-    var paramErrors = new List();
+    var paramErrors = new core.List();
     if (adClientId == null) paramErrors.add("adClientId is required");
     if (adClientId != null) urlParams["adClientId"] = adClientId;
     if (optParams != null) {
@@ -640,13 +640,13 @@ class AdclientsResource extends Resource {
    *
    * [optParams] - Additional query parameters
    */
-  Future<AdClients> list({int maxResults, String pageToken, Map optParams}) {
-    var completer = new Completer();
+  async.Future<AdClients> list({core.int maxResults, core.String pageToken, core.Map optParams}) {
+    var completer = new async.Completer();
     var url = "adclients";
-    var urlParams = new Map();
-    var queryParams = new Map();
+    var urlParams = new core.Map();
+    var queryParams = new core.Map();
 
-    var paramErrors = new List();
+    var paramErrors = new core.List();
     if (maxResults != null) queryParams["maxResults"] = maxResults;
     if (pageToken != null) queryParams["pageToken"] = pageToken;
     if (optParams != null) {
@@ -695,13 +695,13 @@ class AssociationsessionsResource extends Resource {
    *
    * [optParams] - Additional query parameters
    */
-  Future<AssociationSession> start(String productCode, String websiteUrl, {String userLocale, String websiteLocale, Map optParams}) {
-    var completer = new Completer();
+  async.Future<AssociationSession> start(core.String productCode, core.String websiteUrl, {core.String userLocale, core.String websiteLocale, core.Map optParams}) {
+    var completer = new async.Completer();
     var url = "associationsessions/start";
-    var urlParams = new Map();
-    var queryParams = new Map();
+    var urlParams = new core.Map();
+    var queryParams = new core.Map();
 
-    var paramErrors = new List();
+    var paramErrors = new core.List();
     if (productCode == null) paramErrors.add("productCode is required");
     if (productCode != null && !["AFC", "AFG", "AFMC", "AFS", "AFV"].contains(productCode)) {
       paramErrors.add("Allowed values for productCode: AFC, AFG, AFMC, AFS, AFV");
@@ -739,13 +739,13 @@ class AssociationsessionsResource extends Resource {
    *
    * [optParams] - Additional query parameters
    */
-  Future<AssociationSession> verify(String token, {Map optParams}) {
-    var completer = new Completer();
+  async.Future<AssociationSession> verify(core.String token, {core.Map optParams}) {
+    var completer = new async.Completer();
     var url = "associationsessions/verify";
-    var urlParams = new Map();
-    var queryParams = new Map();
+    var urlParams = new core.Map();
+    var queryParams = new core.Map();
 
-    var paramErrors = new List();
+    var paramErrors = new core.List();
     if (token == null) paramErrors.add("token is required");
     if (token != null) queryParams["token"] = token;
     if (optParams != null) {
@@ -784,13 +784,13 @@ class CustomchannelsResource extends Resource {
    *
    * [optParams] - Additional query parameters
    */
-  Future<CustomChannel> delete(String adClientId, String customChannelId, {Map optParams}) {
-    var completer = new Completer();
+  async.Future<CustomChannel> delete(core.String adClientId, core.String customChannelId, {core.Map optParams}) {
+    var completer = new async.Completer();
     var url = "adclients/{adClientId}/customchannels/{customChannelId}";
-    var urlParams = new Map();
-    var queryParams = new Map();
+    var urlParams = new core.Map();
+    var queryParams = new core.Map();
 
-    var paramErrors = new List();
+    var paramErrors = new core.List();
     if (adClientId == null) paramErrors.add("adClientId is required");
     if (adClientId != null) urlParams["adClientId"] = adClientId;
     if (customChannelId == null) paramErrors.add("customChannelId is required");
@@ -825,13 +825,13 @@ class CustomchannelsResource extends Resource {
    *
    * [optParams] - Additional query parameters
    */
-  Future<CustomChannel> get(String adClientId, String customChannelId, {Map optParams}) {
-    var completer = new Completer();
+  async.Future<CustomChannel> get(core.String adClientId, core.String customChannelId, {core.Map optParams}) {
+    var completer = new async.Completer();
     var url = "adclients/{adClientId}/customchannels/{customChannelId}";
-    var urlParams = new Map();
-    var queryParams = new Map();
+    var urlParams = new core.Map();
+    var queryParams = new core.Map();
 
-    var paramErrors = new List();
+    var paramErrors = new core.List();
     if (adClientId == null) paramErrors.add("adClientId is required");
     if (adClientId != null) urlParams["adClientId"] = adClientId;
     if (customChannelId == null) paramErrors.add("customChannelId is required");
@@ -866,13 +866,13 @@ class CustomchannelsResource extends Resource {
    *
    * [optParams] - Additional query parameters
    */
-  Future<CustomChannel> insert(CustomChannel request, String adClientId, {Map optParams}) {
-    var completer = new Completer();
+  async.Future<CustomChannel> insert(CustomChannel request, core.String adClientId, {core.Map optParams}) {
+    var completer = new async.Completer();
     var url = "adclients/{adClientId}/customchannels";
-    var urlParams = new Map();
-    var queryParams = new Map();
+    var urlParams = new core.Map();
+    var queryParams = new core.Map();
 
-    var paramErrors = new List();
+    var paramErrors = new core.List();
     if (adClientId == null) paramErrors.add("adClientId is required");
     if (adClientId != null) urlParams["adClientId"] = adClientId;
     if (optParams != null) {
@@ -909,13 +909,13 @@ class CustomchannelsResource extends Resource {
    *
    * [optParams] - Additional query parameters
    */
-  Future<CustomChannels> list(String adClientId, {int maxResults, String pageToken, Map optParams}) {
-    var completer = new Completer();
+  async.Future<CustomChannels> list(core.String adClientId, {core.int maxResults, core.String pageToken, core.Map optParams}) {
+    var completer = new async.Completer();
     var url = "adclients/{adClientId}/customchannels";
-    var urlParams = new Map();
-    var queryParams = new Map();
+    var urlParams = new core.Map();
+    var queryParams = new core.Map();
 
-    var paramErrors = new List();
+    var paramErrors = new core.List();
     if (adClientId == null) paramErrors.add("adClientId is required");
     if (adClientId != null) urlParams["adClientId"] = adClientId;
     if (maxResults != null) queryParams["maxResults"] = maxResults;
@@ -952,13 +952,13 @@ class CustomchannelsResource extends Resource {
    *
    * [optParams] - Additional query parameters
    */
-  Future<CustomChannel> patch(CustomChannel request, String adClientId, String customChannelId, {Map optParams}) {
-    var completer = new Completer();
+  async.Future<CustomChannel> patch(CustomChannel request, core.String adClientId, core.String customChannelId, {core.Map optParams}) {
+    var completer = new async.Completer();
     var url = "adclients/{adClientId}/customchannels";
-    var urlParams = new Map();
-    var queryParams = new Map();
+    var urlParams = new core.Map();
+    var queryParams = new core.Map();
 
-    var paramErrors = new List();
+    var paramErrors = new core.List();
     if (adClientId == null) paramErrors.add("adClientId is required");
     if (adClientId != null) urlParams["adClientId"] = adClientId;
     if (customChannelId == null) paramErrors.add("customChannelId is required");
@@ -993,13 +993,13 @@ class CustomchannelsResource extends Resource {
    *
    * [optParams] - Additional query parameters
    */
-  Future<CustomChannel> update(CustomChannel request, String adClientId, {Map optParams}) {
-    var completer = new Completer();
+  async.Future<CustomChannel> update(CustomChannel request, core.String adClientId, {core.Map optParams}) {
+    var completer = new async.Completer();
     var url = "adclients/{adClientId}/customchannels";
-    var urlParams = new Map();
-    var queryParams = new Map();
+    var urlParams = new core.Map();
+    var queryParams = new core.Map();
 
-    var paramErrors = new List();
+    var paramErrors = new core.List();
     if (adClientId == null) paramErrors.add("adClientId is required");
     if (adClientId != null) urlParams["adClientId"] = adClientId;
     if (optParams != null) {
@@ -1056,13 +1056,13 @@ class ReportsResource extends Resource {
    *
    * [optParams] - Additional query parameters
    */
-  Future<Report> generate(String startDate, String endDate, {String dimension, String filter, String locale, int maxResults, String metric, String sort, int startIndex, Map optParams}) {
-    var completer = new Completer();
+  async.Future<Report> generate(core.String startDate, core.String endDate, {core.String dimension, core.String filter, core.String locale, core.int maxResults, core.String metric, core.String sort, core.int startIndex, core.Map optParams}) {
+    var completer = new async.Completer();
     var url = "reports";
-    var urlParams = new Map();
-    var queryParams = new Map();
+    var urlParams = new core.Map();
+    var queryParams = new core.Map();
 
-    var paramErrors = new List();
+    var paramErrors = new core.List();
     if (dimension != null) queryParams["dimension"] = dimension;
     if (endDate == null) paramErrors.add("endDate is required");
     if (endDate != null) queryParams["endDate"] = endDate;
@@ -1110,13 +1110,13 @@ class UrlchannelsResource extends Resource {
    *
    * [optParams] - Additional query parameters
    */
-  Future<UrlChannel> delete(String adClientId, String urlChannelId, {Map optParams}) {
-    var completer = new Completer();
+  async.Future<UrlChannel> delete(core.String adClientId, core.String urlChannelId, {core.Map optParams}) {
+    var completer = new async.Completer();
     var url = "adclients/{adClientId}/urlchannels/{urlChannelId}";
-    var urlParams = new Map();
-    var queryParams = new Map();
+    var urlParams = new core.Map();
+    var queryParams = new core.Map();
 
-    var paramErrors = new List();
+    var paramErrors = new core.List();
     if (adClientId == null) paramErrors.add("adClientId is required");
     if (adClientId != null) urlParams["adClientId"] = adClientId;
     if (urlChannelId == null) paramErrors.add("urlChannelId is required");
@@ -1151,13 +1151,13 @@ class UrlchannelsResource extends Resource {
    *
    * [optParams] - Additional query parameters
    */
-  Future<UrlChannel> insert(UrlChannel request, String adClientId, {Map optParams}) {
-    var completer = new Completer();
+  async.Future<UrlChannel> insert(UrlChannel request, core.String adClientId, {core.Map optParams}) {
+    var completer = new async.Completer();
     var url = "adclients/{adClientId}/urlchannels";
-    var urlParams = new Map();
-    var queryParams = new Map();
+    var urlParams = new core.Map();
+    var queryParams = new core.Map();
 
-    var paramErrors = new List();
+    var paramErrors = new core.List();
     if (adClientId == null) paramErrors.add("adClientId is required");
     if (adClientId != null) urlParams["adClientId"] = adClientId;
     if (optParams != null) {
@@ -1194,13 +1194,13 @@ class UrlchannelsResource extends Resource {
    *
    * [optParams] - Additional query parameters
    */
-  Future<UrlChannels> list(String adClientId, {int maxResults, String pageToken, Map optParams}) {
-    var completer = new Completer();
+  async.Future<UrlChannels> list(core.String adClientId, {core.int maxResults, core.String pageToken, core.Map optParams}) {
+    var completer = new async.Completer();
     var url = "adclients/{adClientId}/urlchannels";
-    var urlParams = new Map();
-    var queryParams = new Map();
+    var urlParams = new core.Map();
+    var queryParams = new core.Map();
 
-    var paramErrors = new List();
+    var paramErrors = new core.List();
     if (adClientId == null) paramErrors.add("adClientId is required");
     if (adClientId != null) urlParams["adClientId"] = adClientId;
     if (maxResults != null) queryParams["maxResults"] = maxResults;

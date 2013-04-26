@@ -1,18 +1,18 @@
 part of adsensehost_v4_1_api_client;
 
-class AccountsResource extends Resource {
+class AccountsResource_ extends Resource {
 
-  AccountsAdclientsResource _adclients;
-  AccountsAdclientsResource get adclients => _adclients;
-  AccountsAdunitsResource _adunits;
-  AccountsAdunitsResource get adunits => _adunits;
-  AccountsReportsResource _reports;
-  AccountsReportsResource get reports => _reports;
+  AccountsAdclientsResource_ _adclients;
+  AccountsAdclientsResource_ get adclients => _adclients;
+  AccountsAdunitsResource_ _adunits;
+  AccountsAdunitsResource_ get adunits => _adunits;
+  AccountsReportsResource_ _reports;
+  AccountsReportsResource_ get reports => _reports;
 
-  AccountsResource(Client client) : super(client) {
-  _adclients = new AccountsAdclientsResource(client);
-  _adunits = new AccountsAdunitsResource(client);
-  _reports = new AccountsReportsResource(client);
+  AccountsResource_(Client client) : super(client) {
+  _adclients = new AccountsAdclientsResource_(client);
+  _adunits = new AccountsAdunitsResource_(client);
+  _reports = new AccountsReportsResource_(client);
   }
 
   /**
@@ -40,7 +40,7 @@ class AccountsResource extends Resource {
     }
 
     if (!paramErrors.isEmpty) {
-      completer.completeError(new ArgumentError(paramErrors.join(" / ")));
+      completer.completeError(new core.ArgumentError(paramErrors.join(" / ")));
       return completer.future;
     }
 
@@ -77,7 +77,7 @@ class AccountsResource extends Resource {
     }
 
     if (!paramErrors.isEmpty) {
-      completer.completeError(new ArgumentError(paramErrors.join(" / ")));
+      completer.completeError(new core.ArgumentError(paramErrors.join(" / ")));
       return completer.future;
     }
 
@@ -90,9 +90,9 @@ class AccountsResource extends Resource {
   }
 }
 
-class AccountsAdclientsResource extends Resource {
+class AccountsAdclientsResource_ extends Resource {
 
-  AccountsAdclientsResource(Client client) : super(client) {
+  AccountsAdclientsResource_(Client client) : super(client) {
   }
 
   /**
@@ -124,7 +124,7 @@ class AccountsAdclientsResource extends Resource {
     }
 
     if (!paramErrors.isEmpty) {
-      completer.completeError(new ArgumentError(paramErrors.join(" / ")));
+      completer.completeError(new core.ArgumentError(paramErrors.join(" / ")));
       return completer.future;
     }
 
@@ -169,7 +169,7 @@ class AccountsAdclientsResource extends Resource {
     }
 
     if (!paramErrors.isEmpty) {
-      completer.completeError(new ArgumentError(paramErrors.join(" / ")));
+      completer.completeError(new core.ArgumentError(paramErrors.join(" / ")));
       return completer.future;
     }
 
@@ -182,9 +182,9 @@ class AccountsAdclientsResource extends Resource {
   }
 }
 
-class AccountsAdunitsResource extends Resource {
+class AccountsAdunitsResource_ extends Resource {
 
-  AccountsAdunitsResource(Client client) : super(client) {
+  AccountsAdunitsResource_(Client client) : super(client) {
   }
 
   /**
@@ -220,7 +220,7 @@ class AccountsAdunitsResource extends Resource {
     }
 
     if (!paramErrors.isEmpty) {
-      completer.completeError(new ArgumentError(paramErrors.join(" / ")));
+      completer.completeError(new core.ArgumentError(paramErrors.join(" / ")));
       return completer.future;
     }
 
@@ -265,7 +265,7 @@ class AccountsAdunitsResource extends Resource {
     }
 
     if (!paramErrors.isEmpty) {
-      completer.completeError(new ArgumentError(paramErrors.join(" / ")));
+      completer.completeError(new core.ArgumentError(paramErrors.join(" / ")));
       return completer.future;
     }
 
@@ -313,7 +313,7 @@ class AccountsAdunitsResource extends Resource {
     }
 
     if (!paramErrors.isEmpty) {
-      completer.completeError(new ArgumentError(paramErrors.join(" / ")));
+      completer.completeError(new core.ArgumentError(paramErrors.join(" / ")));
       return completer.future;
     }
 
@@ -356,7 +356,7 @@ class AccountsAdunitsResource extends Resource {
     }
 
     if (!paramErrors.isEmpty) {
-      completer.completeError(new ArgumentError(paramErrors.join(" / ")));
+      completer.completeError(new core.ArgumentError(paramErrors.join(" / ")));
       return completer.future;
     }
 
@@ -408,7 +408,7 @@ class AccountsAdunitsResource extends Resource {
     }
 
     if (!paramErrors.isEmpty) {
-      completer.completeError(new ArgumentError(paramErrors.join(" / ")));
+      completer.completeError(new core.ArgumentError(paramErrors.join(" / ")));
       return completer.future;
     }
 
@@ -455,7 +455,7 @@ class AccountsAdunitsResource extends Resource {
     }
 
     if (!paramErrors.isEmpty) {
-      completer.completeError(new ArgumentError(paramErrors.join(" / ")));
+      completer.completeError(new core.ArgumentError(paramErrors.join(" / ")));
       return completer.future;
     }
 
@@ -498,7 +498,7 @@ class AccountsAdunitsResource extends Resource {
     }
 
     if (!paramErrors.isEmpty) {
-      completer.completeError(new ArgumentError(paramErrors.join(" / ")));
+      completer.completeError(new core.ArgumentError(paramErrors.join(" / ")));
       return completer.future;
     }
 
@@ -511,9 +511,9 @@ class AccountsAdunitsResource extends Resource {
   }
 }
 
-class AccountsReportsResource extends Resource {
+class AccountsReportsResource_ extends Resource {
 
-  AccountsReportsResource(Client client) : super(client) {
+  AccountsReportsResource_(Client client) : super(client) {
   }
 
   /**
@@ -574,7 +574,7 @@ class AccountsReportsResource extends Resource {
     }
 
     if (!paramErrors.isEmpty) {
-      completer.completeError(new ArgumentError(paramErrors.join(" / ")));
+      completer.completeError(new core.ArgumentError(paramErrors.join(" / ")));
       return completer.future;
     }
 
@@ -587,9 +587,9 @@ class AccountsReportsResource extends Resource {
   }
 }
 
-class AdclientsResource extends Resource {
+class AdclientsResource_ extends Resource {
 
-  AdclientsResource(Client client) : super(client) {
+  AdclientsResource_(Client client) : super(client) {
   }
 
   /**
@@ -617,7 +617,7 @@ class AdclientsResource extends Resource {
     }
 
     if (!paramErrors.isEmpty) {
-      completer.completeError(new ArgumentError(paramErrors.join(" / ")));
+      completer.completeError(new core.ArgumentError(paramErrors.join(" / ")));
       return completer.future;
     }
 
@@ -658,7 +658,7 @@ class AdclientsResource extends Resource {
     }
 
     if (!paramErrors.isEmpty) {
-      completer.completeError(new ArgumentError(paramErrors.join(" / ")));
+      completer.completeError(new core.ArgumentError(paramErrors.join(" / ")));
       return completer.future;
     }
 
@@ -671,9 +671,9 @@ class AdclientsResource extends Resource {
   }
 }
 
-class AssociationsessionsResource extends Resource {
+class AssociationsessionsResource_ extends Resource {
 
-  AssociationsessionsResource(Client client) : super(client) {
+  AssociationsessionsResource_(Client client) : super(client) {
   }
 
   /**
@@ -720,7 +720,7 @@ class AssociationsessionsResource extends Resource {
     }
 
     if (!paramErrors.isEmpty) {
-      completer.completeError(new ArgumentError(paramErrors.join(" / ")));
+      completer.completeError(new core.ArgumentError(paramErrors.join(" / ")));
       return completer.future;
     }
 
@@ -757,7 +757,7 @@ class AssociationsessionsResource extends Resource {
     }
 
     if (!paramErrors.isEmpty) {
-      completer.completeError(new ArgumentError(paramErrors.join(" / ")));
+      completer.completeError(new core.ArgumentError(paramErrors.join(" / ")));
       return completer.future;
     }
 
@@ -770,9 +770,9 @@ class AssociationsessionsResource extends Resource {
   }
 }
 
-class CustomchannelsResource extends Resource {
+class CustomchannelsResource_ extends Resource {
 
-  CustomchannelsResource(Client client) : super(client) {
+  CustomchannelsResource_(Client client) : super(client) {
   }
 
   /**
@@ -804,7 +804,7 @@ class CustomchannelsResource extends Resource {
     }
 
     if (!paramErrors.isEmpty) {
-      completer.completeError(new ArgumentError(paramErrors.join(" / ")));
+      completer.completeError(new core.ArgumentError(paramErrors.join(" / ")));
       return completer.future;
     }
 
@@ -845,7 +845,7 @@ class CustomchannelsResource extends Resource {
     }
 
     if (!paramErrors.isEmpty) {
-      completer.completeError(new ArgumentError(paramErrors.join(" / ")));
+      completer.completeError(new core.ArgumentError(paramErrors.join(" / ")));
       return completer.future;
     }
 
@@ -884,7 +884,7 @@ class CustomchannelsResource extends Resource {
     }
 
     if (!paramErrors.isEmpty) {
-      completer.completeError(new ArgumentError(paramErrors.join(" / ")));
+      completer.completeError(new core.ArgumentError(paramErrors.join(" / ")));
       return completer.future;
     }
 
@@ -929,7 +929,7 @@ class CustomchannelsResource extends Resource {
     }
 
     if (!paramErrors.isEmpty) {
-      completer.completeError(new ArgumentError(paramErrors.join(" / ")));
+      completer.completeError(new core.ArgumentError(paramErrors.join(" / ")));
       return completer.future;
     }
 
@@ -972,7 +972,7 @@ class CustomchannelsResource extends Resource {
     }
 
     if (!paramErrors.isEmpty) {
-      completer.completeError(new ArgumentError(paramErrors.join(" / ")));
+      completer.completeError(new core.ArgumentError(paramErrors.join(" / ")));
       return completer.future;
     }
 
@@ -1011,7 +1011,7 @@ class CustomchannelsResource extends Resource {
     }
 
     if (!paramErrors.isEmpty) {
-      completer.completeError(new ArgumentError(paramErrors.join(" / ")));
+      completer.completeError(new core.ArgumentError(paramErrors.join(" / ")));
       return completer.future;
     }
 
@@ -1024,9 +1024,9 @@ class CustomchannelsResource extends Resource {
   }
 }
 
-class ReportsResource extends Resource {
+class ReportsResource_ extends Resource {
 
-  ReportsResource(Client client) : super(client) {
+  ReportsResource_(Client client) : super(client) {
   }
 
   /**
@@ -1083,7 +1083,7 @@ class ReportsResource extends Resource {
     }
 
     if (!paramErrors.isEmpty) {
-      completer.completeError(new ArgumentError(paramErrors.join(" / ")));
+      completer.completeError(new core.ArgumentError(paramErrors.join(" / ")));
       return completer.future;
     }
 
@@ -1096,9 +1096,9 @@ class ReportsResource extends Resource {
   }
 }
 
-class UrlchannelsResource extends Resource {
+class UrlchannelsResource_ extends Resource {
 
-  UrlchannelsResource(Client client) : super(client) {
+  UrlchannelsResource_(Client client) : super(client) {
   }
 
   /**
@@ -1130,7 +1130,7 @@ class UrlchannelsResource extends Resource {
     }
 
     if (!paramErrors.isEmpty) {
-      completer.completeError(new ArgumentError(paramErrors.join(" / ")));
+      completer.completeError(new core.ArgumentError(paramErrors.join(" / ")));
       return completer.future;
     }
 
@@ -1169,7 +1169,7 @@ class UrlchannelsResource extends Resource {
     }
 
     if (!paramErrors.isEmpty) {
-      completer.completeError(new ArgumentError(paramErrors.join(" / ")));
+      completer.completeError(new core.ArgumentError(paramErrors.join(" / ")));
       return completer.future;
     }
 
@@ -1214,7 +1214,7 @@ class UrlchannelsResource extends Resource {
     }
 
     if (!paramErrors.isEmpty) {
-      completer.completeError(new ArgumentError(paramErrors.join(" / ")));
+      completer.completeError(new core.ArgumentError(paramErrors.join(" / ")));
       return completer.future;
     }
 

@@ -71,7 +71,7 @@ class Adsensehost extends ConsoleClient {
 
   Adsensehost([oauth2.OAuth2Console auth]) : super(auth) {
     basePath = "/adsensehost/v4.1/";
-    rootUrl = "https://www.googleapis.com:443/";
+    rootUrl = "https://www.googleapis.com/";
     _accounts = new AccountsResource_(this);
     _adclients = new AdclientsResource_(this);
     _associationsessions = new AssociationsessionsResource_(this);

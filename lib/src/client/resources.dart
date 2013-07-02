@@ -23,7 +23,6 @@ class AccountsResource_ extends Resource {
    * [optParams] - Additional query parameters
    */
   async.Future<Account> get(core.String accountId, {core.Map optParams}) {
-    var completer = new async.Completer();
     var url = "accounts/{accountId}";
     var urlParams = new core.Map();
     var queryParams = new core.Map();
@@ -40,16 +39,13 @@ class AccountsResource_ extends Resource {
     }
 
     if (!paramErrors.isEmpty) {
-      completer.completeError(new core.ArgumentError(paramErrors.join(" / ")));
-      return completer.future;
+      throw new core.ArgumentError(paramErrors.join(" / "));
     }
 
     var response;
     response = _client.request(url, "GET", urlParams: urlParams, queryParams: queryParams);
-    response
-      .then((data) => completer.complete(new Account.fromJson(data)))
-      .catchError((e) { completer.completeError(e); return true; });
-    return completer.future;
+    return response
+      .then((data) => new Account.fromJson(data));
   }
 
   /**
@@ -60,7 +56,6 @@ class AccountsResource_ extends Resource {
    * [optParams] - Additional query parameters
    */
   async.Future<Accounts> list(core.String filterAdClientId, {core.Map optParams}) {
-    var completer = new async.Completer();
     var url = "accounts";
     var urlParams = new core.Map();
     var queryParams = new core.Map();
@@ -77,16 +72,13 @@ class AccountsResource_ extends Resource {
     }
 
     if (!paramErrors.isEmpty) {
-      completer.completeError(new core.ArgumentError(paramErrors.join(" / ")));
-      return completer.future;
+      throw new core.ArgumentError(paramErrors.join(" / "));
     }
 
     var response;
     response = _client.request(url, "GET", urlParams: urlParams, queryParams: queryParams);
-    response
-      .then((data) => completer.complete(new Accounts.fromJson(data)))
-      .catchError((e) { completer.completeError(e); return true; });
-    return completer.future;
+    return response
+      .then((data) => new Accounts.fromJson(data));
   }
 }
 
@@ -105,7 +97,6 @@ class AccountsAdclientsResource_ extends Resource {
    * [optParams] - Additional query parameters
    */
   async.Future<AdClient> get(core.String accountId, core.String adClientId, {core.Map optParams}) {
-    var completer = new async.Completer();
     var url = "accounts/{accountId}/adclients/{adClientId}";
     var urlParams = new core.Map();
     var queryParams = new core.Map();
@@ -124,16 +115,13 @@ class AccountsAdclientsResource_ extends Resource {
     }
 
     if (!paramErrors.isEmpty) {
-      completer.completeError(new core.ArgumentError(paramErrors.join(" / ")));
-      return completer.future;
+      throw new core.ArgumentError(paramErrors.join(" / "));
     }
 
     var response;
     response = _client.request(url, "GET", urlParams: urlParams, queryParams: queryParams);
-    response
-      .then((data) => completer.complete(new AdClient.fromJson(data)))
-      .catchError((e) { completer.completeError(e); return true; });
-    return completer.future;
+    return response
+      .then((data) => new AdClient.fromJson(data));
   }
 
   /**
@@ -150,7 +138,6 @@ class AccountsAdclientsResource_ extends Resource {
    * [optParams] - Additional query parameters
    */
   async.Future<AdClients> list(core.String accountId, {core.int maxResults, core.String pageToken, core.Map optParams}) {
-    var completer = new async.Completer();
     var url = "accounts/{accountId}/adclients";
     var urlParams = new core.Map();
     var queryParams = new core.Map();
@@ -169,16 +156,13 @@ class AccountsAdclientsResource_ extends Resource {
     }
 
     if (!paramErrors.isEmpty) {
-      completer.completeError(new core.ArgumentError(paramErrors.join(" / ")));
-      return completer.future;
+      throw new core.ArgumentError(paramErrors.join(" / "));
     }
 
     var response;
     response = _client.request(url, "GET", urlParams: urlParams, queryParams: queryParams);
-    response
-      .then((data) => completer.complete(new AdClients.fromJson(data)))
-      .catchError((e) { completer.completeError(e); return true; });
-    return completer.future;
+    return response
+      .then((data) => new AdClients.fromJson(data));
   }
 }
 
@@ -199,7 +183,6 @@ class AccountsAdunitsResource_ extends Resource {
    * [optParams] - Additional query parameters
    */
   async.Future<AdUnit> delete(core.String accountId, core.String adClientId, core.String adUnitId, {core.Map optParams}) {
-    var completer = new async.Completer();
     var url = "accounts/{accountId}/adclients/{adClientId}/adunits/{adUnitId}";
     var urlParams = new core.Map();
     var queryParams = new core.Map();
@@ -220,16 +203,13 @@ class AccountsAdunitsResource_ extends Resource {
     }
 
     if (!paramErrors.isEmpty) {
-      completer.completeError(new core.ArgumentError(paramErrors.join(" / ")));
-      return completer.future;
+      throw new core.ArgumentError(paramErrors.join(" / "));
     }
 
     var response;
     response = _client.request(url, "DELETE", urlParams: urlParams, queryParams: queryParams);
-    response
-      .then((data) => completer.complete(new AdUnit.fromJson(data)))
-      .catchError((e) { completer.completeError(e); return true; });
-    return completer.future;
+    return response
+      .then((data) => new AdUnit.fromJson(data));
   }
 
   /**
@@ -244,7 +224,6 @@ class AccountsAdunitsResource_ extends Resource {
    * [optParams] - Additional query parameters
    */
   async.Future<AdUnit> get(core.String accountId, core.String adClientId, core.String adUnitId, {core.Map optParams}) {
-    var completer = new async.Completer();
     var url = "accounts/{accountId}/adclients/{adClientId}/adunits/{adUnitId}";
     var urlParams = new core.Map();
     var queryParams = new core.Map();
@@ -265,16 +244,13 @@ class AccountsAdunitsResource_ extends Resource {
     }
 
     if (!paramErrors.isEmpty) {
-      completer.completeError(new core.ArgumentError(paramErrors.join(" / ")));
-      return completer.future;
+      throw new core.ArgumentError(paramErrors.join(" / "));
     }
 
     var response;
     response = _client.request(url, "GET", urlParams: urlParams, queryParams: queryParams);
-    response
-      .then((data) => completer.complete(new AdUnit.fromJson(data)))
-      .catchError((e) { completer.completeError(e); return true; });
-    return completer.future;
+    return response
+      .then((data) => new AdUnit.fromJson(data));
   }
 
   /**
@@ -291,7 +267,6 @@ class AccountsAdunitsResource_ extends Resource {
    * [optParams] - Additional query parameters
    */
   async.Future<AdCode> getAdCode(core.String accountId, core.String adClientId, core.String adUnitId, {core.String hostCustomChannelId, core.Map optParams}) {
-    var completer = new async.Completer();
     var url = "accounts/{accountId}/adclients/{adClientId}/adunits/{adUnitId}/adcode";
     var urlParams = new core.Map();
     var queryParams = new core.Map();
@@ -313,16 +288,13 @@ class AccountsAdunitsResource_ extends Resource {
     }
 
     if (!paramErrors.isEmpty) {
-      completer.completeError(new core.ArgumentError(paramErrors.join(" / ")));
-      return completer.future;
+      throw new core.ArgumentError(paramErrors.join(" / "));
     }
 
     var response;
     response = _client.request(url, "GET", urlParams: urlParams, queryParams: queryParams);
-    response
-      .then((data) => completer.complete(new AdCode.fromJson(data)))
-      .catchError((e) { completer.completeError(e); return true; });
-    return completer.future;
+    return response
+      .then((data) => new AdCode.fromJson(data));
   }
 
   /**
@@ -337,7 +309,6 @@ class AccountsAdunitsResource_ extends Resource {
    * [optParams] - Additional query parameters
    */
   async.Future<AdUnit> insert(AdUnit request, core.String accountId, core.String adClientId, {core.Map optParams}) {
-    var completer = new async.Completer();
     var url = "accounts/{accountId}/adclients/{adClientId}/adunits";
     var urlParams = new core.Map();
     var queryParams = new core.Map();
@@ -356,16 +327,13 @@ class AccountsAdunitsResource_ extends Resource {
     }
 
     if (!paramErrors.isEmpty) {
-      completer.completeError(new core.ArgumentError(paramErrors.join(" / ")));
-      return completer.future;
+      throw new core.ArgumentError(paramErrors.join(" / "));
     }
 
     var response;
     response = _client.request(url, "POST", body: request.toString(), urlParams: urlParams, queryParams: queryParams);
-    response
-      .then((data) => completer.complete(new AdUnit.fromJson(data)))
-      .catchError((e) { completer.completeError(e); return true; });
-    return completer.future;
+    return response
+      .then((data) => new AdUnit.fromJson(data));
   }
 
   /**
@@ -386,7 +354,6 @@ class AccountsAdunitsResource_ extends Resource {
    * [optParams] - Additional query parameters
    */
   async.Future<AdUnits> list(core.String accountId, core.String adClientId, {core.bool includeInactive, core.int maxResults, core.String pageToken, core.Map optParams}) {
-    var completer = new async.Completer();
     var url = "accounts/{accountId}/adclients/{adClientId}/adunits";
     var urlParams = new core.Map();
     var queryParams = new core.Map();
@@ -408,16 +375,13 @@ class AccountsAdunitsResource_ extends Resource {
     }
 
     if (!paramErrors.isEmpty) {
-      completer.completeError(new core.ArgumentError(paramErrors.join(" / ")));
-      return completer.future;
+      throw new core.ArgumentError(paramErrors.join(" / "));
     }
 
     var response;
     response = _client.request(url, "GET", urlParams: urlParams, queryParams: queryParams);
-    response
-      .then((data) => completer.complete(new AdUnits.fromJson(data)))
-      .catchError((e) { completer.completeError(e); return true; });
-    return completer.future;
+    return response
+      .then((data) => new AdUnits.fromJson(data));
   }
 
   /**
@@ -434,7 +398,6 @@ class AccountsAdunitsResource_ extends Resource {
    * [optParams] - Additional query parameters
    */
   async.Future<AdUnit> patch(AdUnit request, core.String accountId, core.String adClientId, core.String adUnitId, {core.Map optParams}) {
-    var completer = new async.Completer();
     var url = "accounts/{accountId}/adclients/{adClientId}/adunits";
     var urlParams = new core.Map();
     var queryParams = new core.Map();
@@ -455,16 +418,13 @@ class AccountsAdunitsResource_ extends Resource {
     }
 
     if (!paramErrors.isEmpty) {
-      completer.completeError(new core.ArgumentError(paramErrors.join(" / ")));
-      return completer.future;
+      throw new core.ArgumentError(paramErrors.join(" / "));
     }
 
     var response;
     response = _client.request(url, "PATCH", body: request.toString(), urlParams: urlParams, queryParams: queryParams);
-    response
-      .then((data) => completer.complete(new AdUnit.fromJson(data)))
-      .catchError((e) { completer.completeError(e); return true; });
-    return completer.future;
+    return response
+      .then((data) => new AdUnit.fromJson(data));
   }
 
   /**
@@ -479,7 +439,6 @@ class AccountsAdunitsResource_ extends Resource {
    * [optParams] - Additional query parameters
    */
   async.Future<AdUnit> update(AdUnit request, core.String accountId, core.String adClientId, {core.Map optParams}) {
-    var completer = new async.Completer();
     var url = "accounts/{accountId}/adclients/{adClientId}/adunits";
     var urlParams = new core.Map();
     var queryParams = new core.Map();
@@ -498,16 +457,13 @@ class AccountsAdunitsResource_ extends Resource {
     }
 
     if (!paramErrors.isEmpty) {
-      completer.completeError(new core.ArgumentError(paramErrors.join(" / ")));
-      return completer.future;
+      throw new core.ArgumentError(paramErrors.join(" / "));
     }
 
     var response;
     response = _client.request(url, "PUT", body: request.toString(), urlParams: urlParams, queryParams: queryParams);
-    response
-      .then((data) => completer.complete(new AdUnit.fromJson(data)))
-      .catchError((e) { completer.completeError(e); return true; });
-    return completer.future;
+    return response
+      .then((data) => new AdUnit.fromJson(data));
   }
 }
 
@@ -546,7 +502,6 @@ class AccountsReportsResource_ extends Resource {
    * [optParams] - Additional query parameters
    */
   async.Future<Report> generate(core.String accountId, core.String startDate, core.String endDate, {core.String dimension, core.String filter, core.String locale, core.int maxResults, core.String metric, core.String sort, core.int startIndex, core.Map optParams}) {
-    var completer = new async.Completer();
     var url = "accounts/{accountId}/reports";
     var urlParams = new core.Map();
     var queryParams = new core.Map();
@@ -574,16 +529,13 @@ class AccountsReportsResource_ extends Resource {
     }
 
     if (!paramErrors.isEmpty) {
-      completer.completeError(new core.ArgumentError(paramErrors.join(" / ")));
-      return completer.future;
+      throw new core.ArgumentError(paramErrors.join(" / "));
     }
 
     var response;
     response = _client.request(url, "GET", urlParams: urlParams, queryParams: queryParams);
-    response
-      .then((data) => completer.complete(new Report.fromJson(data)))
-      .catchError((e) { completer.completeError(e); return true; });
-    return completer.future;
+    return response
+      .then((data) => new Report.fromJson(data));
   }
 }
 
@@ -600,7 +552,6 @@ class AdclientsResource_ extends Resource {
    * [optParams] - Additional query parameters
    */
   async.Future<AdClient> get(core.String adClientId, {core.Map optParams}) {
-    var completer = new async.Completer();
     var url = "adclients/{adClientId}";
     var urlParams = new core.Map();
     var queryParams = new core.Map();
@@ -617,16 +568,13 @@ class AdclientsResource_ extends Resource {
     }
 
     if (!paramErrors.isEmpty) {
-      completer.completeError(new core.ArgumentError(paramErrors.join(" / ")));
-      return completer.future;
+      throw new core.ArgumentError(paramErrors.join(" / "));
     }
 
     var response;
     response = _client.request(url, "GET", urlParams: urlParams, queryParams: queryParams);
-    response
-      .then((data) => completer.complete(new AdClient.fromJson(data)))
-      .catchError((e) { completer.completeError(e); return true; });
-    return completer.future;
+    return response
+      .then((data) => new AdClient.fromJson(data));
   }
 
   /**
@@ -641,7 +589,6 @@ class AdclientsResource_ extends Resource {
    * [optParams] - Additional query parameters
    */
   async.Future<AdClients> list({core.int maxResults, core.String pageToken, core.Map optParams}) {
-    var completer = new async.Completer();
     var url = "adclients";
     var urlParams = new core.Map();
     var queryParams = new core.Map();
@@ -658,16 +605,13 @@ class AdclientsResource_ extends Resource {
     }
 
     if (!paramErrors.isEmpty) {
-      completer.completeError(new core.ArgumentError(paramErrors.join(" / ")));
-      return completer.future;
+      throw new core.ArgumentError(paramErrors.join(" / "));
     }
 
     var response;
     response = _client.request(url, "GET", urlParams: urlParams, queryParams: queryParams);
-    response
-      .then((data) => completer.complete(new AdClients.fromJson(data)))
-      .catchError((e) { completer.completeError(e); return true; });
-    return completer.future;
+    return response
+      .then((data) => new AdClients.fromJson(data));
   }
 }
 
@@ -696,7 +640,6 @@ class AssociationsessionsResource_ extends Resource {
    * [optParams] - Additional query parameters
    */
   async.Future<AssociationSession> start(core.String productCode, core.String websiteUrl, {core.String userLocale, core.String websiteLocale, core.Map optParams}) {
-    var completer = new async.Completer();
     var url = "associationsessions/start";
     var urlParams = new core.Map();
     var queryParams = new core.Map();
@@ -720,16 +663,13 @@ class AssociationsessionsResource_ extends Resource {
     }
 
     if (!paramErrors.isEmpty) {
-      completer.completeError(new core.ArgumentError(paramErrors.join(" / ")));
-      return completer.future;
+      throw new core.ArgumentError(paramErrors.join(" / "));
     }
 
     var response;
     response = _client.request(url, "GET", urlParams: urlParams, queryParams: queryParams);
-    response
-      .then((data) => completer.complete(new AssociationSession.fromJson(data)))
-      .catchError((e) { completer.completeError(e); return true; });
-    return completer.future;
+    return response
+      .then((data) => new AssociationSession.fromJson(data));
   }
 
   /**
@@ -740,7 +680,6 @@ class AssociationsessionsResource_ extends Resource {
    * [optParams] - Additional query parameters
    */
   async.Future<AssociationSession> verify(core.String token, {core.Map optParams}) {
-    var completer = new async.Completer();
     var url = "associationsessions/verify";
     var urlParams = new core.Map();
     var queryParams = new core.Map();
@@ -757,16 +696,13 @@ class AssociationsessionsResource_ extends Resource {
     }
 
     if (!paramErrors.isEmpty) {
-      completer.completeError(new core.ArgumentError(paramErrors.join(" / ")));
-      return completer.future;
+      throw new core.ArgumentError(paramErrors.join(" / "));
     }
 
     var response;
     response = _client.request(url, "GET", urlParams: urlParams, queryParams: queryParams);
-    response
-      .then((data) => completer.complete(new AssociationSession.fromJson(data)))
-      .catchError((e) { completer.completeError(e); return true; });
-    return completer.future;
+    return response
+      .then((data) => new AssociationSession.fromJson(data));
   }
 }
 
@@ -785,7 +721,6 @@ class CustomchannelsResource_ extends Resource {
    * [optParams] - Additional query parameters
    */
   async.Future<CustomChannel> delete(core.String adClientId, core.String customChannelId, {core.Map optParams}) {
-    var completer = new async.Completer();
     var url = "adclients/{adClientId}/customchannels/{customChannelId}";
     var urlParams = new core.Map();
     var queryParams = new core.Map();
@@ -804,16 +739,13 @@ class CustomchannelsResource_ extends Resource {
     }
 
     if (!paramErrors.isEmpty) {
-      completer.completeError(new core.ArgumentError(paramErrors.join(" / ")));
-      return completer.future;
+      throw new core.ArgumentError(paramErrors.join(" / "));
     }
 
     var response;
     response = _client.request(url, "DELETE", urlParams: urlParams, queryParams: queryParams);
-    response
-      .then((data) => completer.complete(new CustomChannel.fromJson(data)))
-      .catchError((e) { completer.completeError(e); return true; });
-    return completer.future;
+    return response
+      .then((data) => new CustomChannel.fromJson(data));
   }
 
   /**
@@ -826,7 +758,6 @@ class CustomchannelsResource_ extends Resource {
    * [optParams] - Additional query parameters
    */
   async.Future<CustomChannel> get(core.String adClientId, core.String customChannelId, {core.Map optParams}) {
-    var completer = new async.Completer();
     var url = "adclients/{adClientId}/customchannels/{customChannelId}";
     var urlParams = new core.Map();
     var queryParams = new core.Map();
@@ -845,16 +776,13 @@ class CustomchannelsResource_ extends Resource {
     }
 
     if (!paramErrors.isEmpty) {
-      completer.completeError(new core.ArgumentError(paramErrors.join(" / ")));
-      return completer.future;
+      throw new core.ArgumentError(paramErrors.join(" / "));
     }
 
     var response;
     response = _client.request(url, "GET", urlParams: urlParams, queryParams: queryParams);
-    response
-      .then((data) => completer.complete(new CustomChannel.fromJson(data)))
-      .catchError((e) { completer.completeError(e); return true; });
-    return completer.future;
+    return response
+      .then((data) => new CustomChannel.fromJson(data));
   }
 
   /**
@@ -867,7 +795,6 @@ class CustomchannelsResource_ extends Resource {
    * [optParams] - Additional query parameters
    */
   async.Future<CustomChannel> insert(CustomChannel request, core.String adClientId, {core.Map optParams}) {
-    var completer = new async.Completer();
     var url = "adclients/{adClientId}/customchannels";
     var urlParams = new core.Map();
     var queryParams = new core.Map();
@@ -884,16 +811,13 @@ class CustomchannelsResource_ extends Resource {
     }
 
     if (!paramErrors.isEmpty) {
-      completer.completeError(new core.ArgumentError(paramErrors.join(" / ")));
-      return completer.future;
+      throw new core.ArgumentError(paramErrors.join(" / "));
     }
 
     var response;
     response = _client.request(url, "POST", body: request.toString(), urlParams: urlParams, queryParams: queryParams);
-    response
-      .then((data) => completer.complete(new CustomChannel.fromJson(data)))
-      .catchError((e) { completer.completeError(e); return true; });
-    return completer.future;
+    return response
+      .then((data) => new CustomChannel.fromJson(data));
   }
 
   /**
@@ -910,7 +834,6 @@ class CustomchannelsResource_ extends Resource {
    * [optParams] - Additional query parameters
    */
   async.Future<CustomChannels> list(core.String adClientId, {core.int maxResults, core.String pageToken, core.Map optParams}) {
-    var completer = new async.Completer();
     var url = "adclients/{adClientId}/customchannels";
     var urlParams = new core.Map();
     var queryParams = new core.Map();
@@ -929,16 +852,13 @@ class CustomchannelsResource_ extends Resource {
     }
 
     if (!paramErrors.isEmpty) {
-      completer.completeError(new core.ArgumentError(paramErrors.join(" / ")));
-      return completer.future;
+      throw new core.ArgumentError(paramErrors.join(" / "));
     }
 
     var response;
     response = _client.request(url, "GET", urlParams: urlParams, queryParams: queryParams);
-    response
-      .then((data) => completer.complete(new CustomChannels.fromJson(data)))
-      .catchError((e) { completer.completeError(e); return true; });
-    return completer.future;
+    return response
+      .then((data) => new CustomChannels.fromJson(data));
   }
 
   /**
@@ -953,7 +873,6 @@ class CustomchannelsResource_ extends Resource {
    * [optParams] - Additional query parameters
    */
   async.Future<CustomChannel> patch(CustomChannel request, core.String adClientId, core.String customChannelId, {core.Map optParams}) {
-    var completer = new async.Completer();
     var url = "adclients/{adClientId}/customchannels";
     var urlParams = new core.Map();
     var queryParams = new core.Map();
@@ -972,16 +891,13 @@ class CustomchannelsResource_ extends Resource {
     }
 
     if (!paramErrors.isEmpty) {
-      completer.completeError(new core.ArgumentError(paramErrors.join(" / ")));
-      return completer.future;
+      throw new core.ArgumentError(paramErrors.join(" / "));
     }
 
     var response;
     response = _client.request(url, "PATCH", body: request.toString(), urlParams: urlParams, queryParams: queryParams);
-    response
-      .then((data) => completer.complete(new CustomChannel.fromJson(data)))
-      .catchError((e) { completer.completeError(e); return true; });
-    return completer.future;
+    return response
+      .then((data) => new CustomChannel.fromJson(data));
   }
 
   /**
@@ -994,7 +910,6 @@ class CustomchannelsResource_ extends Resource {
    * [optParams] - Additional query parameters
    */
   async.Future<CustomChannel> update(CustomChannel request, core.String adClientId, {core.Map optParams}) {
-    var completer = new async.Completer();
     var url = "adclients/{adClientId}/customchannels";
     var urlParams = new core.Map();
     var queryParams = new core.Map();
@@ -1011,16 +926,13 @@ class CustomchannelsResource_ extends Resource {
     }
 
     if (!paramErrors.isEmpty) {
-      completer.completeError(new core.ArgumentError(paramErrors.join(" / ")));
-      return completer.future;
+      throw new core.ArgumentError(paramErrors.join(" / "));
     }
 
     var response;
     response = _client.request(url, "PUT", body: request.toString(), urlParams: urlParams, queryParams: queryParams);
-    response
-      .then((data) => completer.complete(new CustomChannel.fromJson(data)))
-      .catchError((e) { completer.completeError(e); return true; });
-    return completer.future;
+    return response
+      .then((data) => new CustomChannel.fromJson(data));
   }
 }
 
@@ -1057,7 +969,6 @@ class ReportsResource_ extends Resource {
    * [optParams] - Additional query parameters
    */
   async.Future<Report> generate(core.String startDate, core.String endDate, {core.String dimension, core.String filter, core.String locale, core.int maxResults, core.String metric, core.String sort, core.int startIndex, core.Map optParams}) {
-    var completer = new async.Completer();
     var url = "reports";
     var urlParams = new core.Map();
     var queryParams = new core.Map();
@@ -1083,16 +994,13 @@ class ReportsResource_ extends Resource {
     }
 
     if (!paramErrors.isEmpty) {
-      completer.completeError(new core.ArgumentError(paramErrors.join(" / ")));
-      return completer.future;
+      throw new core.ArgumentError(paramErrors.join(" / "));
     }
 
     var response;
     response = _client.request(url, "GET", urlParams: urlParams, queryParams: queryParams);
-    response
-      .then((data) => completer.complete(new Report.fromJson(data)))
-      .catchError((e) { completer.completeError(e); return true; });
-    return completer.future;
+    return response
+      .then((data) => new Report.fromJson(data));
   }
 }
 
@@ -1111,7 +1019,6 @@ class UrlchannelsResource_ extends Resource {
    * [optParams] - Additional query parameters
    */
   async.Future<UrlChannel> delete(core.String adClientId, core.String urlChannelId, {core.Map optParams}) {
-    var completer = new async.Completer();
     var url = "adclients/{adClientId}/urlchannels/{urlChannelId}";
     var urlParams = new core.Map();
     var queryParams = new core.Map();
@@ -1130,16 +1037,13 @@ class UrlchannelsResource_ extends Resource {
     }
 
     if (!paramErrors.isEmpty) {
-      completer.completeError(new core.ArgumentError(paramErrors.join(" / ")));
-      return completer.future;
+      throw new core.ArgumentError(paramErrors.join(" / "));
     }
 
     var response;
     response = _client.request(url, "DELETE", urlParams: urlParams, queryParams: queryParams);
-    response
-      .then((data) => completer.complete(new UrlChannel.fromJson(data)))
-      .catchError((e) { completer.completeError(e); return true; });
-    return completer.future;
+    return response
+      .then((data) => new UrlChannel.fromJson(data));
   }
 
   /**
@@ -1152,7 +1056,6 @@ class UrlchannelsResource_ extends Resource {
    * [optParams] - Additional query parameters
    */
   async.Future<UrlChannel> insert(UrlChannel request, core.String adClientId, {core.Map optParams}) {
-    var completer = new async.Completer();
     var url = "adclients/{adClientId}/urlchannels";
     var urlParams = new core.Map();
     var queryParams = new core.Map();
@@ -1169,16 +1072,13 @@ class UrlchannelsResource_ extends Resource {
     }
 
     if (!paramErrors.isEmpty) {
-      completer.completeError(new core.ArgumentError(paramErrors.join(" / ")));
-      return completer.future;
+      throw new core.ArgumentError(paramErrors.join(" / "));
     }
 
     var response;
     response = _client.request(url, "POST", body: request.toString(), urlParams: urlParams, queryParams: queryParams);
-    response
-      .then((data) => completer.complete(new UrlChannel.fromJson(data)))
-      .catchError((e) { completer.completeError(e); return true; });
-    return completer.future;
+    return response
+      .then((data) => new UrlChannel.fromJson(data));
   }
 
   /**
@@ -1195,7 +1095,6 @@ class UrlchannelsResource_ extends Resource {
    * [optParams] - Additional query parameters
    */
   async.Future<UrlChannels> list(core.String adClientId, {core.int maxResults, core.String pageToken, core.Map optParams}) {
-    var completer = new async.Completer();
     var url = "adclients/{adClientId}/urlchannels";
     var urlParams = new core.Map();
     var queryParams = new core.Map();
@@ -1214,16 +1113,13 @@ class UrlchannelsResource_ extends Resource {
     }
 
     if (!paramErrors.isEmpty) {
-      completer.completeError(new core.ArgumentError(paramErrors.join(" / ")));
-      return completer.future;
+      throw new core.ArgumentError(paramErrors.join(" / "));
     }
 
     var response;
     response = _client.request(url, "GET", urlParams: urlParams, queryParams: queryParams);
-    response
-      .then((data) => completer.complete(new UrlChannels.fromJson(data)))
-      .catchError((e) { completer.completeError(e); return true; });
-    return completer.future;
+    return response
+      .then((data) => new UrlChannels.fromJson(data));
   }
 }
 

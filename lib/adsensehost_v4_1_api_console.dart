@@ -1,14 +1,18 @@
-library adsensehost_v4_1_api_console;
+library adsensehost_v4_1_api.console;
 
-import "adsensehost_v4_1_api_client.dart";
-export "adsensehost_v4_1_api_client.dart";
-
-import "dart:core" as core;
-import "dart:io" as io;
-import "dart:async" as async;
-import "dart:json" as JSON;
-import "package:http/http.dart" as http;
 import "package:google_oauth2_client/google_oauth2_console.dart" as oauth2;
 
-part "src/console/console_client.dart";
-part "src/console/adsensehost.dart";
+import 'package:google_adsensehost_v4_1_api/src/cloud_api_console.dart';
+
+import "package:google_adsensehost_v4_1_api/adsensehost_v4_1_api_client.dart";
+
+/** Gives AdSense Hosts access to report generation, ad code generation, and publisher management capabilities. */
+class Adsensehost extends Client with ConsoleClient {
+
+  /** OAuth Scope2: View and manage your AdSense host data and associated accounts */
+  static const String ADSENSEHOST_SCOPE = "https://www.googleapis.com/auth/adsensehost";
+
+  final oauth2.OAuth2Console auth;
+
+  Adsensehost([oauth2.OAuth2Console this.auth]);
+}

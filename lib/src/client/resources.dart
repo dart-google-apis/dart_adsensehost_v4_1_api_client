@@ -1,19 +1,18 @@
-part of adsensehost_v4_1_api_client;
+part of adsensehost_v4_1_api;
 
-class AccountsResource_ extends Resource {
+class AccountsResource_ {
 
-  AccountsAdclientsResource_ _adclients;
-  AccountsAdclientsResource_ get adclients => _adclients;
-  AccountsAdunitsResource_ _adunits;
-  AccountsAdunitsResource_ get adunits => _adunits;
-  AccountsReportsResource_ _reports;
-  AccountsReportsResource_ get reports => _reports;
+  final Client _client;
 
-  AccountsResource_(Client client) : super(client) {
-  _adclients = new AccountsAdclientsResource_(client);
-  _adunits = new AccountsAdunitsResource_(client);
-  _reports = new AccountsReportsResource_(client);
-  }
+  final AccountsAdclientsResource_ adclients;
+  final AccountsAdunitsResource_ adunits;
+  final AccountsReportsResource_ reports;
+
+  AccountsResource_(Client client) :
+      _client = client,
+      adclients = new AccountsAdclientsResource_(client),
+      adunits = new AccountsAdunitsResource_(client),
+      reports = new AccountsReportsResource_(client);
 
   /**
    * Get information about the selected associated AdSense account.
@@ -52,10 +51,11 @@ class AccountsResource_ extends Resource {
    * List hosted accounts associated with this AdSense account by ad client id.
    *
    * [filterAdClientId] - Ad clients to list accounts for.
+   *   Repeated values: allowed
    *
    * [optParams] - Additional query parameters
    */
-  async.Future<Accounts> list(core.String filterAdClientId, {core.Map optParams}) {
+  async.Future<Accounts> list(core.List<core.String> filterAdClientId, {core.Map optParams}) {
     var url = "accounts";
     var urlParams = new core.Map();
     var queryParams = new core.Map();
@@ -82,10 +82,12 @@ class AccountsResource_ extends Resource {
   }
 }
 
-class AccountsAdclientsResource_ extends Resource {
+class AccountsAdclientsResource_ {
 
-  AccountsAdclientsResource_(Client client) : super(client) {
-  }
+  final Client _client;
+
+  AccountsAdclientsResource_(Client client) :
+      _client = client;
 
   /**
    * Get information about one of the ad clients in the specified publisher's AdSense account.
@@ -166,10 +168,12 @@ class AccountsAdclientsResource_ extends Resource {
   }
 }
 
-class AccountsAdunitsResource_ extends Resource {
+class AccountsAdunitsResource_ {
 
-  AccountsAdunitsResource_(Client client) : super(client) {
-  }
+  final Client _client;
+
+  AccountsAdunitsResource_(Client client) :
+      _client = client;
 
   /**
    * Delete the specified ad unit from the specified publisher AdSense account.
@@ -263,10 +267,11 @@ class AccountsAdunitsResource_ extends Resource {
    * [adUnitId] - Ad unit to get the code for.
    *
    * [hostCustomChannelId] - Host custom channel to attach to the ad code.
+   *   Repeated values: allowed
    *
    * [optParams] - Additional query parameters
    */
-  async.Future<AdCode> getAdCode(core.String accountId, core.String adClientId, core.String adUnitId, {core.String hostCustomChannelId, core.Map optParams}) {
+  async.Future<AdCode> getAdCode(core.String accountId, core.String adClientId, core.String adUnitId, {core.List<core.String> hostCustomChannelId, core.Map optParams}) {
     var url = "accounts/{accountId}/adclients/{adClientId}/adunits/{adUnitId}/adcode";
     var urlParams = new core.Map();
     var queryParams = new core.Map();
@@ -467,10 +472,12 @@ class AccountsAdunitsResource_ extends Resource {
   }
 }
 
-class AccountsReportsResource_ extends Resource {
+class AccountsReportsResource_ {
 
-  AccountsReportsResource_(Client client) : super(client) {
-  }
+  final Client _client;
+
+  AccountsReportsResource_(Client client) :
+      _client = client;
 
   /**
    * Generate an AdSense report based on the report request sent in the query parameters. Returns the result as JSON; to retrieve output in CSV format specify "alt=csv" as a query parameter.
@@ -482,8 +489,10 @@ class AccountsReportsResource_ extends Resource {
    * [endDate] - End of the date range to report on in "YYYY-MM-DD" format, inclusive.
    *
    * [dimension] - Dimensions to base the report on.
+   *   Repeated values: allowed
    *
    * [filter] - Filters to be run on the report.
+   *   Repeated values: allowed
    *
    * [locale] - Optional locale to use for translating report output to a local language. Defaults to "en_US" if not specified.
    *
@@ -492,8 +501,10 @@ class AccountsReportsResource_ extends Resource {
    *   Maximum: 50000
    *
    * [metric] - Numeric columns to include in the report.
+   *   Repeated values: allowed
    *
    * [sort] - The name of a dimension or metric to sort the resulting report on, optionally prefixed with "+" to sort ascending or "-" to sort descending. If no prefix is specified, the column is sorted ascending.
+   *   Repeated values: allowed
    *
    * [startIndex] - Index of the first row of report data to return.
    *   Minimum: 0
@@ -501,7 +512,7 @@ class AccountsReportsResource_ extends Resource {
    *
    * [optParams] - Additional query parameters
    */
-  async.Future<Report> generate(core.String accountId, core.String startDate, core.String endDate, {core.String dimension, core.String filter, core.String locale, core.int maxResults, core.String metric, core.String sort, core.int startIndex, core.Map optParams}) {
+  async.Future<Report> generate(core.String accountId, core.String startDate, core.String endDate, {core.List<core.String> dimension, core.List<core.String> filter, core.String locale, core.int maxResults, core.List<core.String> metric, core.List<core.String> sort, core.int startIndex, core.Map optParams}) {
     var url = "accounts/{accountId}/reports";
     var urlParams = new core.Map();
     var queryParams = new core.Map();
@@ -539,10 +550,12 @@ class AccountsReportsResource_ extends Resource {
   }
 }
 
-class AdclientsResource_ extends Resource {
+class AdclientsResource_ {
 
-  AdclientsResource_(Client client) : super(client) {
-  }
+  final Client _client;
+
+  AdclientsResource_(Client client) :
+      _client = client;
 
   /**
    * Get information about one of the ad clients in the Host AdSense account.
@@ -615,15 +628,18 @@ class AdclientsResource_ extends Resource {
   }
 }
 
-class AssociationsessionsResource_ extends Resource {
+class AssociationsessionsResource_ {
 
-  AssociationsessionsResource_(Client client) : super(client) {
-  }
+  final Client _client;
+
+  AssociationsessionsResource_(Client client) :
+      _client = client;
 
   /**
    * Create an association session for initiating an association with an AdSense user.
    *
    * [productCode] - Products to associate with the user.
+   *   Repeated values: allowed
    *   Allowed values:
    *     AFC - AdSense For Content
    *     AFG - AdSense For Games
@@ -639,7 +655,7 @@ class AssociationsessionsResource_ extends Resource {
    *
    * [optParams] - Additional query parameters
    */
-  async.Future<AssociationSession> start(core.String productCode, core.String websiteUrl, {core.String userLocale, core.String websiteLocale, core.Map optParams}) {
+  async.Future<AssociationSession> start(core.List<core.String> productCode, core.String websiteUrl, {core.String userLocale, core.String websiteLocale, core.Map optParams}) {
     var url = "associationsessions/start";
     var urlParams = new core.Map();
     var queryParams = new core.Map();
@@ -706,10 +722,12 @@ class AssociationsessionsResource_ extends Resource {
   }
 }
 
-class CustomchannelsResource_ extends Resource {
+class CustomchannelsResource_ {
 
-  CustomchannelsResource_(Client client) : super(client) {
-  }
+  final Client _client;
+
+  CustomchannelsResource_(Client client) :
+      _client = client;
 
   /**
    * Delete a specific custom channel from the host AdSense account.
@@ -936,10 +954,12 @@ class CustomchannelsResource_ extends Resource {
   }
 }
 
-class ReportsResource_ extends Resource {
+class ReportsResource_ {
 
-  ReportsResource_(Client client) : super(client) {
-  }
+  final Client _client;
+
+  ReportsResource_(Client client) :
+      _client = client;
 
   /**
    * Generate an AdSense report based on the report request sent in the query parameters. Returns the result as JSON; to retrieve output in CSV format specify "alt=csv" as a query parameter.
@@ -949,8 +969,10 @@ class ReportsResource_ extends Resource {
    * [endDate] - End of the date range to report on in "YYYY-MM-DD" format, inclusive.
    *
    * [dimension] - Dimensions to base the report on.
+   *   Repeated values: allowed
    *
    * [filter] - Filters to be run on the report.
+   *   Repeated values: allowed
    *
    * [locale] - Optional locale to use for translating report output to a local language. Defaults to "en_US" if not specified.
    *
@@ -959,8 +981,10 @@ class ReportsResource_ extends Resource {
    *   Maximum: 50000
    *
    * [metric] - Numeric columns to include in the report.
+   *   Repeated values: allowed
    *
    * [sort] - The name of a dimension or metric to sort the resulting report on, optionally prefixed with "+" to sort ascending or "-" to sort descending. If no prefix is specified, the column is sorted ascending.
+   *   Repeated values: allowed
    *
    * [startIndex] - Index of the first row of report data to return.
    *   Minimum: 0
@@ -968,7 +992,7 @@ class ReportsResource_ extends Resource {
    *
    * [optParams] - Additional query parameters
    */
-  async.Future<Report> generate(core.String startDate, core.String endDate, {core.String dimension, core.String filter, core.String locale, core.int maxResults, core.String metric, core.String sort, core.int startIndex, core.Map optParams}) {
+  async.Future<Report> generate(core.String startDate, core.String endDate, {core.List<core.String> dimension, core.List<core.String> filter, core.String locale, core.int maxResults, core.List<core.String> metric, core.List<core.String> sort, core.int startIndex, core.Map optParams}) {
     var url = "reports";
     var urlParams = new core.Map();
     var queryParams = new core.Map();
@@ -1004,10 +1028,12 @@ class ReportsResource_ extends Resource {
   }
 }
 
-class UrlchannelsResource_ extends Resource {
+class UrlchannelsResource_ {
 
-  UrlchannelsResource_(Client client) : super(client) {
-  }
+  final Client _client;
+
+  UrlchannelsResource_(Client client) :
+      _client = client;
 
   /**
    * Delete a URL channel from the host AdSense account.

@@ -14,7 +14,7 @@ Adding dependency to pubspec.yaml
 
 ```
   dependencies:
-    google_adsensehost_v4_1_api: '>=0.4.12'
+    google_adsensehost_v4_1_api: '>=0.4.13'
 ```
 
 For web applications:

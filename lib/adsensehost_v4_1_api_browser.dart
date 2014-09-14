@@ -6,6 +6,7 @@ import 'package:google_adsensehost_v4_1_api/src/browser_client.dart';
 import "package:google_adsensehost_v4_1_api/adsensehost_v4_1_api_client.dart";
 
 /** Gives AdSense Hosts access to report generation, ad code generation, and publisher management capabilities. */
+@deprecated
 class Adsensehost extends Client with BrowserClient {
 
   /** OAuth Scope2: View and manage your AdSense host data and associated accounts */
